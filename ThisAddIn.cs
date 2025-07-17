@@ -24,8 +24,13 @@ namespace YiExcelManager {
             if (currentWorkbook != null) {
                 currentWorkbook.NewSheet += Workbook_NewSheet;
                 currentWorkbook.SheetActivate += Workbook_SheetActivate;
+                currentWorkbook.BeforeClose += Workbook_BeforeClose;
             }
             this.Application.WorkbookActivate += Application_WorkbookActivate;
+        }
+
+        private void Workbook_BeforeClose(ref bool Cancel) {
+            navigator.CloseSheets();
         }
 
         private void Application_WorkbookActivate(Workbook Wb) {
@@ -46,6 +51,7 @@ namespace YiExcelManager {
             if (currentWorkbook != null) {
                 currentWorkbook.NewSheet -= Workbook_NewSheet;
                 currentWorkbook.SheetActivate -= Workbook_SheetActivate;
+                currentWorkbook.BeforeClose -= Workbook_BeforeClose;
             }
 
             this.Application.SheetActivate -= Application_SheetActivate;

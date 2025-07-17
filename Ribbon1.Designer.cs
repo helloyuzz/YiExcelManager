@@ -69,6 +69,7 @@
             this.btn_Display.Name = "btn_Display";
             this.btn_Display.ScreenTip = "显示导航";
             this.btn_Display.ShowImage = true;
+            this.btn_Display.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_Display_Click);
             // 
             // btn_About
             // 

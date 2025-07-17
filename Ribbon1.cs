@@ -14,5 +14,13 @@ namespace YiExcelManager {
             AboutBox aboutBox = new AboutBox();
             aboutBox.ShowDialog();
         }
+
+        private void btn_Display_Click(object sender, RibbonControlEventArgs e) {
+            foreach (var panel in Globals.ThisAddIn.CustomTaskPanes) {
+                if (panel.Title == "YiExcelManager") {
+                    panel.Visible = !panel.Visible;
+                }
+            }
+        }
     }
 }

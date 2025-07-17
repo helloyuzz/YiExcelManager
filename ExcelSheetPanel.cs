@@ -32,6 +32,10 @@ namespace YiExcelManager {
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
             string selectedSheet = listBox1.SelectedItem as string;
+            if(excel.ActiveWorkbook == null) {
+                MessageBox.Show("请先打开一个工作簿。", "YiExcelManager提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (!string.IsNullOrEmpty(selectedSheet)) {
                 foreach (Excel.Worksheet sheet in excel.ActiveWorkbook.Worksheets) {
                     if (sheet.Name == selectedSheet) {
@@ -45,6 +49,9 @@ namespace YiExcelManager {
         // Call this method if you want to refresh the sheet list (e.g., after adding/removing sheets)
         public void RefreshSheets() {
             InitializeSheetList();
+        }
+        public void CloseSheets() {
+            listBox1.Items.Clear();
         }
     }
 }
