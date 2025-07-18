@@ -192,9 +192,6 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExcelSheetNavigator.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="ExcelSheetPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,25 +248,10 @@
     <None Include="YiExcelManager_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bookmark_all.png" />
+    <None Include="Assets\about.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="create_bookmark.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="new_bookmark.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="about.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="about1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="tab_page.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="nav_menu.png" />
+    <None Include="Assets\nav_menu.png" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
