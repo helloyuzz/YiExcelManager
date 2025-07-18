@@ -40,6 +40,9 @@ namespace YiExcelManager {
                 foreach (Excel.Worksheet sheet in excel.ActiveWorkbook.Worksheets) {
                     if (sheet.Name == selectedSheet) {
                         sheet.Activate();
+                        if (toolZoomCheckBox.Checked) {
+                            sheet.Application.ActiveWindow.Zoom = 100;
+                        }
                         break;
                     }
                 }
@@ -52,6 +55,14 @@ namespace YiExcelManager {
         }
         public void CloseSheets() {
             listBox1.Items.Clear();
+        }
+
+        private void btn_Setting_MouseClick(object sender, MouseEventArgs e) {
+            contextMenuStrip1.Show(this,PointToClient(Cursor.Position));
+        }
+
+        private void toolZoomCheckBox_Click(object sender, EventArgs e) {
+            toolZoomCheckBox.Checked=!toolZoomCheckBox.Checked;
         }
     }
 }
